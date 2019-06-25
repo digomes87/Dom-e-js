@@ -2,13 +2,8 @@ var listElement = document.querySelector('#app ul');
 var inputElement = document.querySelector('#app input');
 var buttonElement = document.querySelector('#app button');
 
-
-var todos = [
-    'Fazer café',
-    'Estudar',
-    'Compartilhar no Github'
-];
-
+// aqui usamo o lacalstorage para buscar os dados ja armazenados
+var todos = JSON.parse(localStorage.getItem('list_todos')) || [];
 
 function renderTodos(){
     listElement.innerHTML = '';
@@ -24,17 +19,15 @@ function renderTodos(){
         var linktext = document.createTextNode('Excluir');
 
         linkElement.appendChild(linktext);
-
         todoElement.appendChild(todotext);
         todoElement.appendChild(linkElement);
-
         listElement.appendChild(todoElement)
     }
 }
 
 renderTodos();
 
-
+// adicionando conteudo a lista de li
 function addTodo(){
     var todoText = inputElement.value;
 
@@ -44,8 +37,11 @@ function addTodo(){
     salveToStorage();
 }
 
+//inserindo conteudo na li ao clicar no btn, evento é inserido aqui
 buttonElement.onclick = addTodo;
 
+
+//funcao de deletar
 function deleteTodo(pos){
     todos.splice(pos,1);
     renderTodos();
