@@ -41,6 +41,7 @@ function addTodo(){
     todos.push(todoText);
     inputElement.value = '';
     renderTodos();
+    salveToStorage();
 }
 
 buttonElement.onclick = addTodo;
@@ -48,4 +49,11 @@ buttonElement.onclick = addTodo;
 function deleteTodo(pos){
     todos.splice(pos,1);
     renderTodos();
+    salveToStorage();
+}
+
+
+//usando o storage para salvar dados
+function salveToStorage(){  
+    localStorage.setItem('list_todos', JSON.stringify(todos));
 }
