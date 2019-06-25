@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+        <input type="text" name="nome" id="nome"/>
+        <input type="text" name="nome2" id="nome2"/>
+        <button class="botao">Clique aqui</button>
+    </div>
+
+
+
+    <script>
+        var inputElement = document.querySelector('body div#app input');
+        
+
+        console.log(inputElement);
+
+
+
+
+        var inputelement = document.querySelector('input[name=nome]');
+        var btnElement =  document.querySelector('button.botao');
+
+        btnElement.onclick = function(){
+            var text = inputelement.value;
+
+            alert(text);
+        }
+
+
+        var linkElement = document.createElement('a');
+        linkElement.setAttribute('href','http://google.com');
+        linkElement.setAttribute('title','Diegao é mau');
+
+        var textElement =  document.createTextNode('Acesso o google');
+        linkElement.appendChild(textElement);
+
+
+        var containerElement =  document.querySelector('#app');
+        containerElement.appendChild(linkElement);
+    </script>
+</body>
+</html>

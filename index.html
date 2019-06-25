@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+
+    Resultado:
+    <script>
+        // var genero = '';
+        var resp = '';
+
+        function sexo(genero){
+            switch(genero){
+                case 'M':
+                    resp = console.log('Masculino');
+                    break;
+
+                case 'F':
+                    resp = console.log('Feminino');
+                    break;
+                
+                default:
+                    resp = console.log('Sem genero');
+            }
+
+            return  resp;
+           
+        }
+
+        sexo('M');
+
+       var cor = 'Blue';
+
+       var comparacao =  (cor === 'Blue') ? 'Azul' : 'Vermelho';
+       console.log(comparacao);
+
+
+     //for pra quando se sabe o tamanho do for  
+     for(var i=0; i <=100; i++){
+
+     }
+
+
+     //while para quando nao se sabe o tamanho
+     var j = 123123213;
+     while (j > 50){
+         console.log(j);
+
+         j /= 5;
+     }
+
+    //intervalo
+    function exibe(){
+        console.log('OI');
+    }
+
+
+    // setInterval(exibe, 1000);
+    setTimeout(exibe, 5000);
+    </script>
+</body>
+</html>
